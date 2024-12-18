@@ -35,7 +35,7 @@ jobs:
         curl --connect-timeout 2 -sSf -k -u "$USER:$PW" $URL/api/run/audit
         
     - name: send_slack_alert
-      continue-on-error: true
+      continue-on-error: true 
       env:
         SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
         PR_TITLE: ${{ github.event.pull_request.title }}
